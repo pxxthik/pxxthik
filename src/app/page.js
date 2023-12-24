@@ -9,14 +9,14 @@ export default function Home() {
       <div className={styles.content}>
         <p className={styles.subtitle}>HELLO</p>
         <h1 className={styles.title_home}>
-          I'm <span>Pratheek Bedre</span>
+          I&apos;m <span>Pratheek Bedre</span>
           {showWhoIam ? <WhoIam /> : null}
         </h1>
         <p className={styles.description_home}>
-          Welcome to my data science portfolio! I'm a results-driven data
+          Welcome to my data science portfolio! I&apos;m a results-driven data
           scientist with expertise in statistical analysis, machine learning,
           and data visualization. I turn data into actionable insights and have
-          a track record of driving innovation in diverse industries. Let's
+          a track record of driving innovation in diverse industries. Let&apos;s
           connect to explore how I can contribute to your success.
         </p>
         <div className="action__btns">
