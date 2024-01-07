@@ -26,7 +26,7 @@ export default function page() {
           <br />
           <p>
             I have a keen interest in the field of Machine Learning and Data
-            Science, and I'm presently learning and working on the skills
+            Science, and I&apos;m presently learning and working on the skills
             required to expertise in the same.
           </p>
           <br />
