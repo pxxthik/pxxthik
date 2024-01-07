@@ -88,6 +88,12 @@ body {
   border-radius: 50%;
 }
 
+.flex-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media (width < 750px) {
   .action__btns {
     margin: auto;

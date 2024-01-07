@@ -1,0 +1,27 @@
+.about_container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+}
+
+.about_container .image_about img {
+  width: 80%;
+}
+
+.content div h2 {
+  color: #857251;
+  margin: 1rem 0;
+}
+
+@media (width < 750px) {
+  .about_container {
+    text-align: center;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (width < 1000px) {
+  .about_container {
+    gap: 0;
+  }
+}
