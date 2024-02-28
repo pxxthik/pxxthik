@@ -76,15 +76,6 @@ reset: false
 
 srLeft.reveal('.contact-info',{delay: 100})
 srLeft.reveal('.about_image',{delay: 100})
-
-/* -- ABOUT SKILLS & FORM BOX -- */
-const srRight = ScrollReveal({
-  origin: 'right',
-  distance: '60px',
-  duration: 1000,
-  reset: false
-})
-
-srRight.reveal('.about-info',{delay: 100})
-srRight.reveal('.skills-box',{delay: 100})
-srRight.reveal('.form-control',{delay: 100})
+srLeft.reveal('.about-info',{delay: 100})
+srLeft.reveal('.skills-box',{delay: 100})
+srLeft.reveal('.form-control',{delay: 100})
