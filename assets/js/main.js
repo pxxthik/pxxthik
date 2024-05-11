@@ -67,15 +67,15 @@ sr.reveal('.top-header',{})
 /* ----- ## -- SCROLL REVEAL LEFT_RIGHT ANIMATION -- ## ----- */
 
 /* -- ABOUT INFO & CONTACT INFO -- */
-const srLeft = ScrollReveal({
-origin: 'left',
-distance: '60px',
-duration: 1000,
-reset: false
-})
+// const srLeft = ScrollReveal({
+// origin: 'left',
+// distance: '60px',
+// duration: 1000,
+// reset: false
+// })
 
-srLeft.reveal('.contact-info',{delay: 100})
-srLeft.reveal('.about_image',{delay: 100})
-srLeft.reveal('.about-info',{delay: 100})
-srLeft.reveal('.skills-box',{delay: 100})
-srLeft.reveal('.form-control',{delay: 100})
+sr.reveal('.contact-info',{delay: 100})
+sr.reveal('.about_image',{delay: 100})
+sr.reveal('.about-info',{delay: 100})
+sr.reveal('.skills-box',{delay: 100})
+sr.reveal('.form-control',{delay: 100})
