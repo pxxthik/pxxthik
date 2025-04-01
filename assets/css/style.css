@@ -351,18 +351,15 @@ h3{
 }
 
 /* ----- ABOUT / SKILLS BOX ----- */
-#skills{
-    display: flex;
-}
 .about_image{
     width: 100%;
     border-radius: 12px;
 }
 .skills-box{
-    margin: 10px;
+    margin: 20px 0;
 }
 .skills-header{
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 .skills-list{
     display: flex;
@@ -652,5 +649,132 @@ footer{
     }
     .input-field{
         width: 100%;
+    }
+}
+
+
+/* Add to style.css */
+.exp-timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.exp-timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background: var(--first-color);
+    transform: translateX(-50%);
+}
+
+.exp-item {
+    position: relative;
+    width: 46%;
+    margin: 20px 0;
+    background: var(--color-white);
+    border-radius: 15px;
+    box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
+}
+
+.exp-item:nth-child(odd) {
+    margin-left: auto;
+}
+
+.exp-item:nth-child(even) {
+    margin-right: auto;
+}
+
+.exp-icon {
+    position: absolute;
+    top: 20px;
+    width: 50px;
+    height: 50px;
+    background: var(--first-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    font-size: 1.2rem;
+}
+
+.exp-item:nth-child(odd) .exp-icon {
+    left: -70px;
+}
+
+.exp-item:nth-child(even) .exp-icon {
+    right: -70px;
+}
+
+.exp-content {
+    padding: 25px;
+}
+
+.exp-date {
+    display: block;
+    font-size: 14px;
+    color: var(--text-color-third);
+    margin-bottom: 8px;
+}
+
+.exp-company {
+    display: block;
+    font-size: 14px;
+    color: var(--text-color-second);
+    margin-bottom: 15px;
+}
+
+.exp-skills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.exp-skills span {
+    background: var(--first-color);
+    color: var(--color-white);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.exp-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.exp-list li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    color: #666;
+    line-height: 1.5;
+}
+
+.exp-list li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--first-color);
+}
+
+@media (max-width: 768px) {
+    .exp-timeline::before {
+        left: 20px;
+    }
+    
+    .exp-item {
+        width: 100%;
+        margin-left: 40px !important;
+    }
+    
+    .exp-icon {
+        left: -60px !important;
+        right: auto !important;
     }
 }
