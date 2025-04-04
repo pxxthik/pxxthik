@@ -1,5 +1,15 @@
 let blogs = [
   {
+    title: "Making ML Workflows Easier with DVC: Versioning, Pipelines & Experiment Tracking",
+    description:
+      "Introduction: Machine Learning (ML) is no longer just about building models — it’s about building reproducible, scalable, and collaborative...",
+    category: "mlops",
+    link: "https://pxxthik.medium.com/making-ml-workflows-easier-with-dvc-versioning-pipelines-experiment-tracking-19ec5b28de6c",
+    image_link:
+      "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*OzeqGxMCpLXbmeeeZPj9tw.png",
+    date: "4 Apr 2025",
+  },
+  {
     title: "🔍 Exploring Engineering Graduate Salaries: A Case Study",
     description:
       "Introduction: Welcome to our case study exploring the factors influencing salaries among engineering graduates! In this analysis, we...",
