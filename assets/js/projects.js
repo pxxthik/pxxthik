@@ -33,13 +33,28 @@ let projects = [
 let project_container = document.getElementById("project_container");
 for (let i = 0; i < projects.length; i++) {
   project_container.innerHTML += `
-    <div class="project-box">
-        <img src="${projects[i].image_link}" alt="">
-        <h3>${projects[i].title}</h3>
-        <label style="margin: 0 1rem;">${projects[i].description}</label>
-        <div class="featured-text-btn">
-            <a href="${projects[i].github_link}" class="btn blue-btn sm-btn">Github</a>
-            <a href="${projects[i].website_link}" class="btn sm-btn">Live Demo</a>
-        </div>
-    </div>`;
+  <div class="proj-card-v2">
+      <div class="proj-header-v2">
+          <h3 class="proj-title-v2">${projects[i].title}</h3>
+      </div>
+      <div class="proj-image-container">
+          <img src="${projects[i].image_link}" alt="${projects[i].title}">
+      </div>
+      <div class="proj-body-v2">
+          <p class="proj-desc-v2">${projects[i].description}</p>
+          <div class="proj-footer-v2">
+              <div class="proj-meta">
+                  <span><i class="uil uil-calendar-alt"></i> ${projects[i].date}</span>
+              </div>
+              <div class="proj-links-v2">
+                  <a href="${projects[i].github_link}" class="proj-link-v2">
+                      <i class="uil uil-code-branch"></i>
+                  </a>
+                  <a href="${projects[i].website_link}" target="_blank" class="proj-link-v2">
+                      <i class="uil uil-external-link-alt"></i>
+                  </a>
+              </div>
+          </div>
+      </div>
+  </div>`;
 }
