@@ -1,12 +1,11 @@
 let projects = [
   {
-    title: "99acres-Insightful-Estates",
-    description:
-      "Real Estate Data Science Application! 🏡📊 Leveraging cutting-edge data science techniques",
+    title: "Real Estate Data Science Application",
+    description: "Get instant price estimates using our AI-powered valuation tool 🤖",
     category: "machine learning",
     image_link: "./assets/projects/house-with-garden.jpg",
-    github_link: "https://github.com/pxxthik/99acres-Insightful-Estates",
-    website_link: "http://13.232.82.172:8501/",
+    github_link: "https://github.com/pxxthik/Real-Estate-Data-Science",
+    website_link: "https://pxxthik-capstone-real-estate.hf.space/",
     date: "20 April 2024",
   },
   {
