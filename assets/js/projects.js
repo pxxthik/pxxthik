@@ -1,5 +1,14 @@
 let projects = [
   {
+    title: "Athletes Performance Analysis",
+    description: "Interactive Dashboard for Analyzing Olympic Athlete Performance Trends",
+    category: "analysis",
+    image_link: "./assets/projects/athlete-analysis.jpg",
+    github_link: "https://github.com/pxxthik/Olympics-Athletes-Performance",
+    website_link: "https://pxxthik-olympics-athletes-performance.hf.space/",
+    date: "17 December 2024",
+  },
+  {
     title: "Real Estate Data Science Application",
     description: "Get instant price estimates using our AI-powered valuation tool 🤖",
     category: "machine learning",
