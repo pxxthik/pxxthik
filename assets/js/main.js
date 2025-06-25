@@ -88,6 +88,6 @@ sr.reveal('.form-control',{delay: 100})
 // Download cv
 
 function downloadCV() {
-  link = "https://drive.google.com/file/d/1sdkmFAy91cif0hJVUtyo6NirWV89OTgq/view?usp=sharing"
+  link = "https://drive.google.com/file/d/1UpjN2IobRf4tg35uFc1KkxKy8ZHMRiFO/view?usp=sharing"
   window.open(link, '_blank')
 }
