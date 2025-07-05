@@ -334,7 +334,8 @@ h3{
     border-radius: 20px;
 }
 .about-info p{
-    text-align: center;
+    text-align: justify;
+    text-indent: 2em;
     font-size: 15px;
     color: #777;
 }
