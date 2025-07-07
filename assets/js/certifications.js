@@ -41,10 +41,35 @@ let certificates = [
         }
     },
     {
+        title: "AWS Certified SysOps Administrator – Associate",
+        platform: "Udemy",
+        provider_name: "EDUCBA Bridging the Gap",
+        completed_date: "7th June 2025",
+        issued_date: "6th July 2025",
+        description: "This course covers all the core topics required for the AWS Certified SysOps Administrator Associate certification. It includes comprehensive training on AWS infrastructure, monitoring, automation, troubleshooting, and deployment. The course emphasizes practical scenarios and best practices, preparing learners to manage cloud systems effectively and operate within AWS environments confidently.",
+        skills: [
+            "AWS",
+            "Cloud Computing",
+            "EC2",
+            "S3",
+            "IAM",
+            "Monitoring and Metrics",
+            "Automation",
+            "Troubleshooting",
+            "Deployment",
+            "SysOps"
+        ],
+        image_url: "assets/certificates/aws.jpg",
+        actions: {
+            view_certificate: "https://drive.google.com/file/d/1MJ4x9nhLzsd7DlwySqDGCjeYEHSDZnEP/view?usp=sharing",
+            course_details: "https://www.udemy.com/course/aws-certified-sysops-administrator-associate-c/"
+        }
+    },
+    {
         "title": "Data Science and Machine Learning Basic to Advanced",
         "platform": "Udemy",
         "provider_name": "Raj Chhabria",
-        "completed_date": "5th July 2025",
+        "completed_date": "2nd January 2025",
         "issued_date": "5th July 2025",
         "description": "This course provides a comprehensive understanding of data science and machine learning, covering fundamental concepts, algorithms, and techniques. The course includes practical applications, coding in Python, and various machine learning models, making it suitable for beginners and advanced learners. The course also focuses on real-world projects to build hands-on experience and understanding of key data science concepts.",
         "skills": [
@@ -70,7 +95,7 @@ let certificates = [
         "title": "Python And Django Framework For Beginners Complete Course",
         "platform": "Udemy",
         "provider_name": "Horizon Tech",
-        "completed_date": "5th July 2025",
+        "completed_date": "11th November 2023",
         "issued_date": "5th July 2025",
         "description": "This course offers a comprehensive introduction to Python programming and the Django web framework. It covers the basics of Python programming and helps you understand how to develop web applications using Django. The course includes hands-on projects, guiding you through real-world scenarios to build fully functional web applications. It is ideal for beginners who are looking to learn Python and Django for web development.",
         "skills": [
