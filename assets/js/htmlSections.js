@@ -1,11 +1,7 @@
-const contact = document.getElementById("contact");
+const footerContact = document.getElementById("footerContact");
 const smallIntro = document.getElementById("smallIntro");
 
-contact.innerHTML = `
-    <div class="top-header" style="margin: 4em 0 0 0;">
-        <h1>Get in touch</h1>
-        <span>Contact me here</span>
-    </div>
+footerContact.innerHTML = `
     <div class="top-footer">
         <p><a href="mailto:pratheekbedrejun20@gmail.com"
                 style="text-decoration: none; color: black;">pratheekbedrejun20@gmail.com</a></p>

@@ -5,22 +5,25 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RYG5E311WV"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-    gtag('config', 'G-RYG5E311WV');
+        gtag('config', 'G-RYG5E311WV');
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Pratheek Bedre | Data Scientist showcasing machine learning projects, certifications, and data science experience.">
-    <meta name="keywords" content="Data Science, Machine Learning Projects, Data Scientist Portfolio, Pratheek Bedre, Python, Deep Learning, AI Developer, ML Resume, Analytics Portfolio, AI Projects">
+    <meta name="description"
+        content="Pratheek Bedre | Data Scientist showcasing machine learning projects, certifications, and data science experience.">
+    <meta name="keywords"
+        content="Data Science, Machine Learning Projects, Data Scientist Portfolio, Pratheek Bedre, Python, Deep Learning, AI Developer, ML Resume, Analytics Portfolio, AI Projects">
     <meta name="author" content="Pratheek Bedre">
 
     <!-- Open Graph (Facebook, LinkedIn) -->
     <meta property="og:title" content="Pratheek Bedre | Data Science Portfolio">
-    <meta property="og:description" content="Portfolio of Pratheek Bedre, a data scientist and machine learning enthusiast.">
+    <meta property="og:description"
+        content="Portfolio of Pratheek Bedre, a data scientist and machine learning enthusiast.">
     <meta property="og:image" content="https://pratheek-bedre.web.app/assets/images/avatar.JPG">
     <meta property="og:url" content="https://pratheek-bedre.web.app">
     <meta property="og:type" content="website">
@@ -79,7 +82,7 @@
                         <div class="circle"></div>
                     </li>
                     <li class="nav_list">
-                        <a href="projects.html" class="nav-link active-link" onclick="myMenuFunction()">Projects</a>
+                        <a href="projects.html" class="nav-link" onclick="myMenuFunction()">Projects</a>
                         <div class="circle"></div>
                     </li>
                     <li class="nav_list">
@@ -87,7 +90,7 @@
                         <div class="circle"></div>
                     </li>
                     <li class="nav_list">
-                        <a href="contact.html" class="nav-link" onclick="myMenuFunction()">Contact</a>
+                        <a href="contact.html" class="nav-link active-link" onclick="myMenuFunction()">Contact</a>
                         <div class="circle"></div>
                     </li>
                 </ul>
@@ -110,13 +113,38 @@
         <main class="wrapper">
             <!-- -------------- FEATURED BOX ---------------- -->
 
-            <section class="section" id="projects">
-                <div class="top-header" style="margin: 4em 0 1em 0;">
-                    <h1>Projects</h1>
-                    <span>Browse My Recent</span>
+            <!-- -------------- CONTACT BOX ---------------- -->
+            <section class="section" id="contact">
+                <div class="top-header" style="margin: 4em 0 2em 0;">
+                    <h1>Get in touch</h1>
+                    <span>Do you have a project in your mind, contact me here</span>
                 </div>
-                <div class="project-mosaic" id="project_container">
-                    <!-- Project cards will be inserted here by JS -->
+                <div class="row">
+                    <div class="col">
+                        <div class="contact-info">
+                            <h2>Find Me <i class="uil uil-corner-right-down"></i></h2>
+                            <p onclick="window.open('mailto:pratheekbedrejun20@gmail.com')">
+                                pratheekbedrejun20@gmail.com</p>
+                            <p><i class="uil uil-map-marker"></i> Shivamogga, India</p>
+                            <p onclick="window.open('https://www.linkedin.com/in/pratheek-bedre/')"><i
+                                    class="uil uil-linkedin"></i> /in/pratheek-bedre</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <form action="https://formspree.io/f/xpwrvekw" method="POST" class="form-control">
+
+                            <div class="form-inputs">
+                                <input type="text" class="input-field" placeholder="Name" name="name">
+                                <input type="text" class="input-field" placeholder="Email" name="email">
+                            </div>
+                            <div class="text-area">
+                                <textarea placeholder="Message" name="message"></textarea>
+                            </div>
+                            <div class="form-button">
+                                <button class="btn" type="submit">Send <i class="uil uil-message"></i></button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </section>
 
@@ -124,9 +152,6 @@
 
             <!-- -------------- ABOUT BOX ---------------- -->
 
-            <section class="section" id="smallIntro">
-                
-            </section>
 
 
 
@@ -141,7 +166,7 @@
 
         <!-- --------------- FOOTER --------------- -->
         <footer class="section" id="footerContact">
-            
+
         </footer>
 
     </div>
@@ -155,7 +180,6 @@
 
     <!-- ----- MAIN JS ----- -->
     <script src="assets/js/main.js"></script>
-    <script src="assets/js/projects.js"></script>
     <script src="assets/js/htmlSections.js"></script>
 </body>
 
