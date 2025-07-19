@@ -16,7 +16,7 @@ let certificates = [
             "Machine Learning",
             "MLOps"
         ],
-        image_url: "assets/certificates/dsmp1.png",
+        image_url: "assets/certificates/dsmp1.webp",
         actions: {
             view_certificate: "https://drive.google.com/file/d/1YvogiN-iRL7BtIOz-ty-DlT4UaAwauXL/view?usp=sharing",
             course_details: "https://learnwith.campusx.in/"
@@ -41,7 +41,7 @@ let certificates = [
             "Deployment",
             "SysOps"
         ],
-        image_url: "assets/certificates/aws.jpg",
+        image_url: "assets/certificates/aws.webp",
         actions: {
             view_certificate: "https://drive.google.com/file/d/1MJ4x9nhLzsd7DlwySqDGCjeYEHSDZnEP/view?usp=sharing",
             course_details: "https://www.udemy.com/course/aws-certified-sysops-administrator-associate-c/"
@@ -66,7 +66,7 @@ let certificates = [
             "Supervised Learning",
             "Unsupervised Learning"
         ],
-        "image_url": "assets/certificates/ds-and-ml-by-raj.jpg",
+        "image_url": "assets/certificates/ds-and-ml-by-raj.webp",
         "actions": {
             "view_certificate": "https://drive.google.com/file/d/1UEOwUUFXcM0V520vh4e0G5MlFR0Bq8Ti/view?usp=sharing",
             "course_details": "https://www.udemy.com/course/data-science-and-machine-learning-basic-to-advanced/"
@@ -90,7 +90,7 @@ let certificates = [
         "Database Management",
         "RESTful APIs"
         ],
-        "image_url": "assets/certificates/python-django.jpg",
+        "image_url": "assets/certificates/python-django.webp",
         "actions": {
         "view_certificate": "https://drive.google.com/file/d/19yRu-Wabz3DSXcGIjQtrrRH4vWXD3oCj/view?usp=sharing",
         "course_details": "https://www.udemy.com/course/python-and-django-for-beginners/"
