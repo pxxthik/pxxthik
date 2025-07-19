@@ -65,7 +65,7 @@ if (smallIntro) {
                 </p>
                 <div id="techStacks"></div>
                 <div class="about-btn">
-                    <button class="btn">Download CV <i class="uil uil-import"></i></button>
+                    <button onclick="downloadCV()" class="btn">Download CV <i class="uil uil-import"></i></button>
                 </div>
             </div>
         </div>
