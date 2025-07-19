@@ -1,21 +1,3 @@
-function toggleCertification(header) {
-    const content = header.nextElementSibling;
-    const accordion = header.parentElement;
-    
-    // Close all other accordions
-    const allAccordions = document.querySelectorAll('.cert-accordion');
-    allAccordions.forEach(acc => {
-        if (acc !== accordion) {
-            acc.querySelector('.cert-header').classList.remove('active');
-            acc.querySelector('.cert-content').classList.remove('active');
-        }
-    });
-    
-    // Toggle current accordion
-    header.classList.toggle('active');
-    content.classList.toggle('active');
-}
-
 let certificates = [
     {
         title: "Data Science Mentorship Program (DSMP)",
@@ -23,7 +5,7 @@ let certificates = [
         provider_name: "Nitish Singh",
         completed_date: "20th April 2024",
         issued_date: "19th February 2025",
-        description: "The CampusX Data Science Mentorship Program is designed to make you an industry-ready data scientist. The core philosophy behind the design of this program is its hands-on approach. Each module under the program consists of a plethora of assignments and projects. During the course, I was exposed to an industry-relevant curriculum, tools, and libraries, including real-life case studies to ensure practical learning. The program also focused on interview preparation and included doubt clearance classes for paid members. In addition, portfolio building and career counseling were prioritized to ensure a successful career transition into data science. The program helped me develop the skills and knowledge necessary to become a competent data scientist.",
+        description: "The CampusX Data Science Mentorship Program is designed to make you an industry-ready data scientist. The core philosophy behind the design of this program is its hands-on approach. Each module under the program consists of a plethora of assignments and projects.",
         skills: [
             "Python",
             "Data Analysis",
@@ -46,7 +28,7 @@ let certificates = [
         provider_name: "EDUCBA Bridging the Gap",
         completed_date: "7th June 2025",
         issued_date: "6th July 2025",
-        description: "This course covers all the core topics required for the AWS Certified SysOps Administrator Associate certification. It includes comprehensive training on AWS infrastructure, monitoring, automation, troubleshooting, and deployment. The course emphasizes practical scenarios and best practices, preparing learners to manage cloud systems effectively and operate within AWS environments confidently.",
+        description: "This course covers all the core topics required for the AWS Certified SysOps Administrator Associate certification. It includes comprehensive training on AWS infrastructure, monitoring, automation, troubleshooting, and deployment.",
         skills: [
             "AWS",
             "Cloud Computing",
@@ -71,7 +53,7 @@ let certificates = [
         "provider_name": "Raj Chhabria",
         "completed_date": "2nd January 2025",
         "issued_date": "5th July 2025",
-        "description": "This course provides a comprehensive understanding of data science and machine learning, covering fundamental concepts, algorithms, and techniques. The course includes practical applications, coding in Python, and various machine learning models, making it suitable for beginners and advanced learners. The course also focuses on real-world projects to build hands-on experience and understanding of key data science concepts.",
+        "description": "This course provides a comprehensive understanding of data science and machine learning, covering fundamental concepts, algorithms, and techniques. The course includes practical applications, coding in Python, and various machine learning models.",
         "skills": [
             "Python",
             "Machine Learning",
@@ -89,7 +71,6 @@ let certificates = [
             "view_certificate": "https://drive.google.com/file/d/1UEOwUUFXcM0V520vh4e0G5MlFR0Bq8Ti/view?usp=sharing",
             "course_details": "https://www.udemy.com/course/data-science-and-machine-learning-basic-to-advanced/"
         }
-  
     },
     {
         "title": "Python And Django Framework For Beginners Complete Course",
@@ -97,7 +78,7 @@ let certificates = [
         "provider_name": "Horizon Tech",
         "completed_date": "11th November 2023",
         "issued_date": "5th July 2025",
-        "description": "This course offers a comprehensive introduction to Python programming and the Django web framework. It covers the basics of Python programming and helps you understand how to develop web applications using Django. The course includes hands-on projects, guiding you through real-world scenarios to build fully functional web applications. It is ideal for beginners who are looking to learn Python and Django for web development.",
+        "description": "This course offers a comprehensive introduction to Python programming and the Django web framework. It covers the basics of Python programming and helps you understand how to develop web applications using Django.",
         "skills": [
         "Python",
         "Django",
@@ -115,45 +96,176 @@ let certificates = [
         "course_details": "https://www.udemy.com/course/python-and-django-for-beginners/"
         }
     }
-]
+];
 
-const certificationContainer = document.getElementById("certificationContainer");
-for (let i = 0; i < certificates.length; i++) {
-    certificationContainer.innerHTML += `
-        <div class="cert-accordion">
-            <div class="cert-header ${i===0 ? "active" : ""}" onclick="toggleCertification(this)">
-                <div class="cert-info">
-                    <h3 class="cert-title">${certificates[i].title}</h3>
-                    <div class="cert-provider">
-                        <span class="cert-platform">${certificates[i].platform}</span>
-                        <span class="cert-provider-name">${certificates[i].provider_name}</span>
-                    </div>
-                    <div class="cert-date">Completed: ${certificates[i].completed_date}</div>
-                </div>
-                <div class="cert-toggle">
-                    <i class="uil uil-angle-down"></i>
+let currentSlide = 0;
+let isAutoPlaying = true;
+let autoPlayInterval;
+
+function initializeCarousel() {
+    const certificationContainer = document.getElementById("certificationContainer");
+    
+    // Create carousel structure
+    certificationContainer.innerHTML = `
+        <div class="carousel-container">
+            <div class="carousel-wrapper">
+                <div class="carousel-track" id="carouselTrack">
+                    ${certificates.map((cert, index) => createCertSlide(cert, index)).join('')}
                 </div>
             </div>
-            <div class="cert-content ${i===0 ? "active" : ""}">
-                <p class="cert-description">${certificates[i].description}</p>
-                <div class="cert-skills">
-                    ${certificates[i].skills.map(skill => `<span class="cert-skill">${skill}</span>`).join(' ')}
+            <button class="carousel-btn carousel-btn-prev" onclick="previousSlide()">
+                <i class="uil uil-angle-left"></i>
+            </button>
+            <button class="carousel-btn carousel-btn-next" onclick="nextSlide()">
+                <i class="uil uil-angle-right"></i>
+            </button>
+            <div class="carousel-dots">
+                ${certificates.map((_, index) => 
+                    `<button class="carousel-dot ${index === 0 ? 'active' : ''}" onclick="goToSlide(${index})"></button>`
+                ).join('')}
+            </div>
+        </div>
+    `;
+
+    updateCarousel();
+    startAutoPlay();
+}
+
+function createCertSlide(cert, index) {
+    return `
+        <div class="carousel-slide">
+            <div class="cert-card">
+                <div class="cert-visual">
+                    <div class="cert-icon">
+                        <i class="uil uil-award"></i>
+                    </div>
+                    <div class="cert-image-container">
+                        <img src="${cert.image_url}" alt="${cert.title}" class="cert-image">
+                    </div>
                 </div>
-                <div class="cert-image-container">
-                    <img src="${certificates[i].image_url}"
-                        alt="${certificates[i].title}" class="cert-image">
-                </div>
-                <div class="cert-actions">
-                    <a href="${certificates[i].actions.view_certificate}" target="_blank" class="cert-btn cert-btn-primary">
-                        <i class="uil uil-certificate"></i>
-                        View Certificate
-                    </a>
-                    <a href="${certificates[i].actions.course_details}" target="_blank" class="cert-btn cert-btn-secondary">
-                        <i class="uil uil-external-link-alt"></i>
-                        Course Details
-                    </a>
+                <div class="cert-content">
+                    <div class="cert-header">
+                        <h3 class="cert-title">${cert.title}</h3>
+                        <div class="cert-provider">
+                            <span class="cert-platform">${cert.platform}</span>
+                            <span class="cert-provider-name">${cert.provider_name}</span>
+                        </div>
+                    </div>
+                    <p class="cert-description">${cert.description}</p>
+                    <div class="cert-skills">
+                        ${cert.skills.slice(0, 6).map(skill => `<span class="cert-skill">${skill}</span>`).join('')}
+                        ${cert.skills.length > 6 ? '<span class="cert-skill-more">+' + (cert.skills.length - 6) + ' more</span>' : ''}
+                    </div>
+                    <div class="cert-date">Completed: ${cert.completed_date}</div>
+                    <div class="cert-actions">
+                        <a href="${cert.actions.view_certificate}" target="_blank" class="cert-btn cert-btn-primary">
+                            <i class="uil uil-eye"></i>
+                            View
+                        </a>
+                        <a href="${cert.actions.course_details}" target="_blank" class="cert-btn cert-btn-secondary">
+                            <i class="uil uil-external-link-alt"></i>
+                            Course
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     `;
 }
+
+function updateCarousel() {
+    const track = document.getElementById('carouselTrack');
+    const dots = document.querySelectorAll('.carousel-dot');
+    
+    if (track) {
+        track.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+    
+    // Update dots
+    dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentSlide);
+    });
+}
+
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % certificates.length;
+    updateCarousel();
+    resetAutoPlay();
+}
+
+function previousSlide() {
+    currentSlide = (currentSlide - 1 + certificates.length) % certificates.length;
+    updateCarousel();
+    resetAutoPlay();
+}
+
+function goToSlide(index) {
+    currentSlide = index;
+    updateCarousel();
+    resetAutoPlay();
+}
+
+let isFirstSlideLoaded = false;
+function startAutoPlay() {
+    if (isAutoPlaying) {
+        // Check if this is the first time starting autoplay
+        if (!isFirstSlideLoaded) {
+            isFirstSlideLoaded = true;
+            setTimeout(() => {
+                autoPlayInterval = setInterval(nextSlide, 5000); // Start autoplay after 3-4 seconds
+            }, 6000); // Delay the first slide for 4 seconds
+        } else {
+            autoPlayInterval = setInterval(nextSlide, 5000); // Regular autoplay interval
+        }
+    }
+}
+
+function stopAutoPlay() {
+    clearInterval(autoPlayInterval);
+}
+
+function resetAutoPlay() {
+    stopAutoPlay();
+    startAutoPlay();
+}
+
+// Pause autoplay on hover
+function pauseAutoPlay() {
+    isAutoPlaying = false;
+    stopAutoPlay();
+}
+
+function resumeAutoPlay() {
+    isAutoPlaying = true;
+    startAutoPlay();
+}
+
+// Initialize carousel when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    if (document.getElementById('certificationContainer')) {
+        initializeCarousel();
+        
+        // Add hover events for autoplay control
+        const carouselContainer = document.querySelector('.carousel-container');
+        if (carouselContainer) {
+            carouselContainer.addEventListener('mouseenter', pauseAutoPlay);
+            carouselContainer.addEventListener('mouseleave', resumeAutoPlay);
+        }
+    }
+});
+
+// Handle keyboard navigation
+document.addEventListener('keydown', function(e) {
+    if (document.querySelector('.carousel-container')) {
+        if (e.key === 'ArrowLeft') {
+            previousSlide();
+        } else if (e.key === 'ArrowRight') {
+            nextSlide();
+        }
+    }
+});
+
+// Handle window resize
+window.addEventListener('resize', function() {
+    updateCarousel();
+});
